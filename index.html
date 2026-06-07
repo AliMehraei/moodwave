@@ -11,19 +11,29 @@
 </head>
 <body>
 
-  <!-- Animated background canvas -->
   <canvas id="bg-canvas"></canvas>
-
-  <!-- Floating particles -->
   <div id="particles"></div>
 
-  <!-- Main content -->
+  <!-- Noise texture overlay -->
+  <div class="noise-overlay"></div>
+
   <main class="main" id="main">
 
     <!-- Header -->
     <header class="header">
       <div class="logo">
-        <span class="logo-icon">🌊</span>
+        <div class="logo-icon-wrap">
+          <svg viewBox="0 0 32 32" fill="none" class="logo-svg">
+            <path d="M4 20 Q8 8 16 16 Q24 24 28 12" stroke="url(#waveGrad)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M4 20 Q8 8 16 16 Q24 24 28 12" stroke="url(#waveGrad)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.15"/>
+            <defs>
+              <linearGradient id="waveGrad" x1="0" y1="0" x2="32" y2="0">
+                <stop offset="0%" stop-color="#a78bfa"/>
+                <stop offset="100%" stop-color="#f472b6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
         <span class="logo-text">MoodWave</span>
       </div>
       <div class="lang-toggle">
@@ -33,10 +43,13 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="hero-section">
       <div class="hero-inner">
-        <p class="hero-subtitle" id="hero-subtitle">الان چه حالی داری؟</p>
+        <div class="hero-badge">
+          <svg viewBox="0 0 16 16" width="14" height="14"><circle cx="8" cy="8" r="4" fill="#a78bfa"/><circle cx="8" cy="8" r="7" stroke="#a78bfa" stroke-width="1.5" fill="none" opacity="0.4"/></svg>
+          <span id="hero-subtitle">الان چه حالی داری؟</span>
+        </div>
         <h1 class="hero-title" id="hero-title">حالت رو<br>انتخاب کن</h1>
         <p class="hero-desc" id="hero-desc">ما یه موزیک کامل برات پیدا می‌کنیم</p>
       </div>
@@ -46,9 +59,33 @@
     <section class="mood-grid-section">
       <div class="mood-grid" id="mood-grid">
 
-        <button class="mood-card" data-mood="happy" style="--mood-color: #FFD700; --mood-glow: #FF8C00;">
+        <!-- HAPPY -->
+        <button class="mood-card" data-mood="happy" style="--mood-color:#FFD700;--mood-glow:#FF8C00;--mood-color-2:#FF6B35;">
+          <div class="mood-card-bg"></div>
+          <div class="mood-card-grain"></div>
           <div class="mood-card-inner">
-            <div class="mood-emoji">😄</div>
+            <div class="mood-icon-wrap">
+              <div class="mood-icon-ring"></div>
+              <div class="mood-icon-ring mood-icon-ring--2"></div>
+              <svg class="mood-svg" viewBox="0 0 64 64" fill="none">
+                <!-- Sun rays -->
+                <line x1="32" y1="4" x2="32" y2="12" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="32" y1="52" x2="32" y2="60" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="4" y1="32" x2="12" y2="32" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="52" y1="32" x2="60" y2="32" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="10" y1="10" x2="16" y2="16" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+                <line x1="48" y1="48" x2="54" y2="54" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+                <line x1="54" y1="10" x2="48" y2="16" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+                <line x1="16" y1="48" x2="10" y2="54" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+                <!-- Sun circle -->
+                <circle cx="32" cy="32" r="14" fill="var(--mood-color)" opacity=".15"/>
+                <circle cx="32" cy="32" r="14" stroke="var(--mood-color)" stroke-width="2.5"/>
+                <!-- Happy face -->
+                <circle cx="27" cy="29" r="2" fill="var(--mood-color)"/>
+                <circle cx="37" cy="29" r="2" fill="var(--mood-color)"/>
+                <path d="M26 36 Q32 42 38 36" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
             <div class="mood-label">
               <span class="mood-fa">شاد</span>
               <span class="mood-en">Happy</span>
@@ -57,13 +94,39 @@
               <span class="mood-fa-desc">خوشحالم، دنیا قشنگه!</span>
               <span class="mood-en-desc">Feeling on top of the world</span>
             </div>
-            <div class="mood-ripple"></div>
+            <div class="mood-card-arrow">
+              <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
           </div>
+          <div class="mood-ripple"></div>
         </button>
 
-        <button class="mood-card" data-mood="sad" style="--mood-color: #4A90D9; --mood-glow: #1a3a6b;">
+        <!-- SAD -->
+        <button class="mood-card" data-mood="sad" style="--mood-color:#60A5FA;--mood-glow:#1e3a5f;--mood-color-2:#818CF8;">
+          <div class="mood-card-bg"></div>
+          <div class="mood-card-grain"></div>
           <div class="mood-card-inner">
-            <div class="mood-emoji">😢</div>
+            <div class="mood-icon-wrap">
+              <div class="mood-icon-ring"></div>
+              <div class="mood-icon-ring mood-icon-ring--2"></div>
+              <svg class="mood-svg" viewBox="0 0 64 64" fill="none">
+                <!-- Rain drops -->
+                <path d="M20 8 Q20 14 17 18" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M32 4 Q32 12 29 17" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+                <path d="M44 8 Q44 14 41 18" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <!-- Cloud -->
+                <path d="M14 36 Q14 28 22 28 Q24 22 32 22 Q42 22 44 30 Q50 30 50 38 Q50 44 44 44 L20 44 Q14 44 14 38 Z" fill="var(--mood-color)" opacity=".12" stroke="var(--mood-color)" stroke-width="2"/>
+                <!-- Sad face inside cloud -->
+                <circle cx="27" cy="35" r="1.8" fill="var(--mood-color)"/>
+                <circle cx="37" cy="35" r="1.8" fill="var(--mood-color)"/>
+                <path d="M26 41 Q32 37 38 41" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <!-- Tear drops -->
+                <path d="M27 37 Q26 40 27 42" stroke="var(--mood-color)" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+                <path d="M37 37 Q36 40 37 42" stroke="var(--mood-color)" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+              </svg>
+            </div>
             <div class="mood-label">
               <span class="mood-fa">غمگین</span>
               <span class="mood-en">Sad</span>
@@ -72,13 +135,38 @@
               <span class="mood-fa-desc">دلم گرفته، یه دلداری بده</span>
               <span class="mood-en-desc">Need a little comfort</span>
             </div>
-            <div class="mood-ripple"></div>
+            <div class="mood-card-arrow">
+              <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
           </div>
+          <div class="mood-ripple"></div>
         </button>
 
-        <button class="mood-card" data-mood="energetic" style="--mood-color: #FF3CAC; --mood-glow: #784BA0;">
+        <!-- ENERGETIC -->
+        <button class="mood-card" data-mood="energetic" style="--mood-color:#F472B6;--mood-glow:#7c3aed;--mood-color-2:#A855F7;">
+          <div class="mood-card-bg"></div>
+          <div class="mood-card-grain"></div>
           <div class="mood-card-inner">
-            <div class="mood-emoji">⚡</div>
+            <div class="mood-icon-wrap">
+              <div class="mood-icon-ring"></div>
+              <div class="mood-icon-ring mood-icon-ring--2"></div>
+              <svg class="mood-svg" viewBox="0 0 64 64" fill="none">
+                <!-- Lightning bolt complex -->
+                <path d="M36 6 L22 34 L30 34 L28 58 L46 26 L36 26 Z" fill="var(--mood-color)" opacity=".2"/>
+                <path d="M36 6 L22 34 L30 34 L28 58 L46 26 L36 26 Z" stroke="var(--mood-color)" stroke-width="2.5" stroke-linejoin="round"/>
+                <!-- Sparks -->
+                <circle cx="12" cy="20" r="2.5" fill="var(--mood-color)" opacity=".6"/>
+                <circle cx="52" cy="44" r="2" fill="var(--mood-color)" opacity=".5"/>
+                <circle cx="8" cy="46" r="1.5" fill="var(--mood-color)" opacity=".4"/>
+                <circle cx="56" cy="18" r="3" fill="var(--mood-color)" opacity=".3"/>
+                <!-- Speed lines -->
+                <line x1="6" y1="30" x2="16" y2="30" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+                <line x1="4" y1="36" x2="12" y2="36" stroke="var(--mood-color)" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+                <line x1="48" y1="30" x2="58" y2="30" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+              </svg>
+            </div>
             <div class="mood-label">
               <span class="mood-fa">پر‌انرژی</span>
               <span class="mood-en">Energetic</span>
@@ -87,13 +175,44 @@
               <span class="mood-fa-desc">آماده‌ام همه چیز رو بزنم هوا</span>
               <span class="mood-en-desc">Ready to take on the world</span>
             </div>
-            <div class="mood-ripple"></div>
+            <div class="mood-card-arrow">
+              <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
           </div>
+          <div class="mood-ripple"></div>
         </button>
 
-        <button class="mood-card" data-mood="calm" style="--mood-color: #00F5A0; --mood-glow: #00D9F5;">
+        <!-- CALM -->
+        <button class="mood-card" data-mood="calm" style="--mood-color:#34D399;--mood-glow:#065f46;--mood-color-2:#06B6D4;">
+          <div class="mood-card-bg"></div>
+          <div class="mood-card-grain"></div>
           <div class="mood-card-inner">
-            <div class="mood-emoji">🧘</div>
+            <div class="mood-icon-wrap">
+              <div class="mood-icon-ring"></div>
+              <div class="mood-icon-ring mood-icon-ring--2"></div>
+              <svg class="mood-svg" viewBox="0 0 64 64" fill="none">
+                <!-- Lotus / meditation -->
+                <ellipse cx="32" cy="48" rx="28" ry="4" fill="var(--mood-color)" opacity=".08"/>
+                <!-- Body -->
+                <path d="M32 48 L32 28" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Legs cross -->
+                <path d="M32 42 Q22 44 16 40" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M32 42 Q42 44 48 40" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Arms -->
+                <path d="M32 34 Q22 32 18 36" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M32 34 Q42 32 46 36" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Head -->
+                <circle cx="32" cy="22" r="8" fill="var(--mood-color)" opacity=".12" stroke="var(--mood-color)" stroke-width="2"/>
+                <!-- Calm eyes (closed) -->
+                <path d="M28 22 Q30 24 32 22" stroke="var(--mood-color)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M32 22 Q34 24 36 22" stroke="var(--mood-color)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <!-- Aura rings -->
+                <circle cx="32" cy="22" r="13" stroke="var(--mood-color)" stroke-width="1" opacity=".2" stroke-dasharray="3 4"/>
+                <circle cx="32" cy="22" r="18" stroke="var(--mood-color)" stroke-width="1" opacity=".1" stroke-dasharray="2 5"/>
+              </svg>
+            </div>
             <div class="mood-label">
               <span class="mood-fa">آروم</span>
               <span class="mood-en">Calm</span>
@@ -102,13 +221,42 @@
               <span class="mood-fa-desc">آروم و ریلکسم، همه چیز خوبه</span>
               <span class="mood-en-desc">At peace with everything</span>
             </div>
-            <div class="mood-ripple"></div>
+            <div class="mood-card-arrow">
+              <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
           </div>
+          <div class="mood-ripple"></div>
         </button>
 
-        <button class="mood-card" data-mood="angry" style="--mood-color: #FF4500; --mood-glow: #8B0000;">
+        <!-- ANGRY -->
+        <button class="mood-card" data-mood="angry" style="--mood-color:#F87171;--mood-glow:#7f1d1d;--mood-color-2:#FB923C;">
+          <div class="mood-card-bg"></div>
+          <div class="mood-card-grain"></div>
           <div class="mood-card-inner">
-            <div class="mood-emoji">😤</div>
+            <div class="mood-icon-wrap">
+              <div class="mood-icon-ring"></div>
+              <div class="mood-icon-ring mood-icon-ring--2"></div>
+              <svg class="mood-svg" viewBox="0 0 64 64" fill="none">
+                <!-- Explosion / eruption -->
+                <path d="M32 32 L20 14 L28 24 L18 8 L30 20 L24 6 L34 22 L32 10 L40 24 L44 10 L38 26 L48 14 L40 30 L54 22 L42 34 L56 32 L44 40 L56 44 L42 44 L48 56 L36 46 L38 58 L30 48 L28 60 L26 48 L16 56 L22 44 L8 48 L20 40 L6 38 L20 34 L8 26 L22 32 Z" fill="var(--mood-color)" opacity=".1"/>
+                <!-- Face -->
+                <circle cx="32" cy="34" r="14" fill="var(--mood-color)" opacity=".15" stroke="var(--mood-color)" stroke-width="2"/>
+                <!-- Angry brows -->
+                <path d="M24 28 Q27 26 30 28" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M34 28 Q37 26 40 28" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Angry eyes -->
+                <circle cx="27.5" cy="31" r="2" fill="var(--mood-color)"/>
+                <circle cx="36.5" cy="31" r="2" fill="var(--mood-color)"/>
+                <!-- Gritted mouth -->
+                <path d="M25 39 L39 39" stroke="var(--mood-color)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M27 39 L27 41 M30 39 L30 42 M33 39 L33 41 M36 39 L36 42" stroke="var(--mood-color)" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Steam -->
+                <path d="M20 18 Q18 14 20 10 Q22 14 20 18" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" fill="none" opacity=".6"/>
+                <path d="M44 16 Q42 12 44 8 Q46 12 44 16" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" fill="none" opacity=".6"/>
+              </svg>
+            </div>
             <div class="mood-label">
               <span class="mood-fa">عصبانی</span>
               <span class="mood-en">Angry</span>
@@ -117,13 +265,37 @@
               <span class="mood-fa-desc">عصبیم، باید خالی بشم</span>
               <span class="mood-en-desc">Need to let it all out</span>
             </div>
-            <div class="mood-ripple"></div>
+            <div class="mood-card-arrow">
+              <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
           </div>
+          <div class="mood-ripple"></div>
         </button>
 
-        <button class="mood-card" data-mood="romantic" style="--mood-color: #FF69B4; --mood-glow: #C71585;">
+        <!-- ROMANTIC -->
+        <button class="mood-card" data-mood="romantic" style="--mood-color:#F9A8D4;--mood-glow:#9d174d;--mood-color-2:#E879F9;">
+          <div class="mood-card-bg"></div>
+          <div class="mood-card-grain"></div>
           <div class="mood-card-inner">
-            <div class="mood-emoji">💕</div>
+            <div class="mood-icon-wrap">
+              <div class="mood-icon-ring"></div>
+              <div class="mood-icon-ring mood-icon-ring--2"></div>
+              <svg class="mood-svg" viewBox="0 0 64 64" fill="none">
+                <!-- Floating hearts -->
+                <path d="M32 50 C32 50 12 38 12 26 C12 19 18 14 24 16 C27 17 30 19 32 22 C34 19 37 17 40 16 C46 14 52 19 52 26 C52 38 32 50 32 50 Z" fill="var(--mood-color)" opacity=".2" stroke="var(--mood-color)" stroke-width="2.5" stroke-linejoin="round"/>
+                <!-- Small hearts -->
+                <path d="M16 14 C16 14 10 10 10 6 C10 3 13 1 15 3 C16 4 16.5 5 16 6 C15.5 5 17 4 18 3 C20 1 23 3 23 6 C23 10 16 14 16 14 Z" fill="var(--mood-color)" opacity=".5"/>
+                <path d="M50 20 C50 20 46 16 46 13 C46 11 48 10 49 11 C49.5 11.5 50 12 50 12.5 C50 12 50.5 11.5 51 11 C52 10 54 11 54 13 C54 16 50 20 50 20 Z" fill="var(--mood-color)" opacity=".4"/>
+                <path d="M44 8 C44 8 41 5 41 3 C41 1.5 42.5 1 43 2 C43.5 2.5 44 3 44 3.2 C44 3 44.5 2.5 45 2 C45.5 1 47 1.5 47 3 C47 5 44 8 44 8 Z" fill="var(--mood-color)" opacity=".3"/>
+                <!-- Sparkles -->
+                <line x1="8" y1="32" x2="8" y2="38" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+                <line x1="5" y1="35" x2="11" y2="35" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+                <line x1="55" y1="36" x2="55" y2="42" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+                <line x1="52" y1="39" x2="58" y2="39" stroke="var(--mood-color)" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+              </svg>
+            </div>
             <div class="mood-label">
               <span class="mood-fa">عاشقانه</span>
               <span class="mood-en">Romantic</span>
@@ -132,14 +304,19 @@
               <span class="mood-fa-desc">دلم می‌خواد عاشق بشم</span>
               <span class="mood-en-desc">Feeling that love energy</span>
             </div>
-            <div class="mood-ripple"></div>
+            <div class="mood-card-arrow">
+              <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
           </div>
+          <div class="mood-ripple"></div>
         </button>
 
       </div>
     </section>
 
-    <!-- Player Section (hidden initially) -->
+    <!-- Player Section -->
     <section class="player-section" id="player-section">
       <div class="player-card" id="player-card">
         <div class="player-mood-indicator" id="player-mood-indicator"></div>
@@ -166,12 +343,47 @@
               </div>
             </div>
             <div class="player-controls">
-              <button class="ctrl-btn" id="btn-prev" title="Previous">⏮</button>
-              <button class="ctrl-btn play-btn" id="btn-play" title="Play/Pause">▶</button>
-              <button class="ctrl-btn" id="btn-next" title="Next">⏭</button>
-              <button class="ctrl-btn vol-btn" id="btn-vol" title="Volume">🔊</button>
+              <!-- Prev -->
+              <button class="ctrl-btn" id="btn-prev" title="Previous">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                  <path d="M19 5v14M5 12l8-7v14z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <!-- Play/Pause -->
+              <button class="ctrl-btn play-btn" id="btn-play" title="Play/Pause">
+                <svg id="icon-play" viewBox="0 0 24 24" fill="none" width="22" height="22">
+                  <path d="M6 4l14 8-14 8V4z" fill="currentColor"/>
+                </svg>
+                <svg id="icon-pause" viewBox="0 0 24 24" fill="none" width="22" height="22" style="display:none">
+                  <rect x="5" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+                  <rect x="15" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+                </svg>
+              </button>
+              <!-- Next -->
+              <button class="ctrl-btn" id="btn-next" title="Next">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                  <path d="M5 5v14M19 12L11 5v14z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <!-- Volume -->
+              <button class="ctrl-btn vol-btn" id="btn-vol" title="Volume">
+                <svg id="icon-vol-on" viewBox="0 0 24 24" fill="none" width="20" height="20">
+                  <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"/>
+                  <path d="M15.5 8.5a5 5 0 010 7M18.5 6a9 9 0 010 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+                <svg id="icon-vol-off" viewBox="0 0 24 24" fill="none" width="20" height="20" style="display:none">
+                  <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor"/>
+                  <line x1="22" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="16" y1="9" x2="22" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
             </div>
-            <button class="change-mood-btn" id="change-mood-btn">تغییر حال</button>
+            <button class="change-mood-btn" id="change-mood-btn">
+              <svg viewBox="0 0 20 20" fill="none" width="16" height="16">
+                <path d="M4 10a6 6 0 1110.196-4.304M16 4v4h-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>تغییر حال</span>
+            </button>
           </div>
         </div>
       </div>
@@ -179,9 +391,7 @@
 
   </main>
 
-  <!-- Toast notification -->
   <div class="toast" id="toast"></div>
-
   <script src="app.js"></script>
 </body>
 </html>

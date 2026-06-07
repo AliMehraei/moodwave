@@ -365,21 +365,29 @@ function formatTime(secs) {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
+function setPlayIcon(playing) {
+  const iconPlay  = document.getElementById('icon-play');
+  const iconPause = document.getElementById('icon-pause');
+  if (!iconPlay || !iconPause) return;
+  iconPlay.style.display  = playing ? 'none' : 'block';
+  iconPause.style.display = playing ? 'block' : 'none';
+}
+
 function playPause() {
   if (state.playing) {
     audio.pause();
     clearInterval(state.progressTimer);
     state.playing = false;
-    btnPlay.textContent = '▶';
+    setPlayIcon(false);
     vinyl.classList.remove('spinning');
   } else {
     state.playing = true;
-    btnPlay.textContent = '⏸';
+    setPlayIcon(true);
     vinyl.classList.add('spinning');
     startProgress();
     audio.play().catch(() => {
       state.playing = false;
-      btnPlay.textContent = '▶';
+      setPlayIcon(false);
       vinyl.classList.remove('spinning');
       clearInterval(state.progressTimer);
       showToast('▶ برای پخش روی دکمه Play کلیک کن');
@@ -425,7 +433,7 @@ function selectMood(mood, cardEl, e) {
   playerSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   vinyl.classList.remove('spinning');
-  btnPlay.textContent = '▶';
+  setPlayIcon(false);
 
   // Auto-play after short delay
   setTimeout(() => {
@@ -484,7 +492,9 @@ let muted = false;
 $('btn-vol').addEventListener('click', () => {
   muted = !muted;
   audio.volume = muted ? 0 : 0.7;
-  $('btn-vol').textContent = muted ? '🔇' : '🔊';
+  const on  = document.getElementById('icon-vol-on');
+  const off = document.getElementById('icon-vol-off');
+  if (on && off) { on.style.display = muted ? 'none' : 'block'; off.style.display = muted ? 'block' : 'none'; }
 });
 
 // ---- Progress bar click ----
@@ -513,7 +523,7 @@ $('change-mood-btn').addEventListener('click', () => {
   audio.pause();
   clearInterval(state.progressTimer);
   vinyl.classList.remove('spinning');
-  btnPlay.textContent = '▶';
+  setPlayIcon(false);
   moodGrid.scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
 
