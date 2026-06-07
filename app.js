@@ -8,7 +8,7 @@ const MOODS = {
     en: 'Happy',
     color: '#FFD700',
     glow: '#FF8C00',
-    bgColors: ['#2a1a00', '#1a1000', '#0a0800'],
+    bgColors: ['#3d2200', '#2a1400', '#1f0800'],
     tracks: [
       {
         title: 'Rondo alla Turca – Mozart',
@@ -31,7 +31,7 @@ const MOODS = {
     en: 'Sad',
     color: '#4A90D9',
     glow: '#1a3a6b',
-    bgColors: ['#000a1a', '#00060f', '#000408'],
+    bgColors: ['#001535', '#000d22', '#001028'],
     tracks: [
       {
         title: 'Moonlight Sonata – Beethoven',
@@ -54,7 +54,7 @@ const MOODS = {
     en: 'Energetic',
     color: '#FF3CAC',
     glow: '#784BA0',
-    bgColors: ['#1a0020', '#0f0015', '#08000f'],
+    bgColors: ['#2d0040', '#1a0030', '#3d005a'],
     tracks: [
       {
         title: 'In the Hall of the Mountain King – Grieg',
@@ -77,7 +77,7 @@ const MOODS = {
     en: 'Calm',
     color: '#00F5A0',
     glow: '#00D9F5',
-    bgColors: ['#001a10', '#000f09', '#000805'],
+    bgColors: ['#002818', '#001a10', '#003020'],
     tracks: [
       {
         title: 'Gymnopédie No.2 – Erik Satie',
@@ -100,7 +100,7 @@ const MOODS = {
     en: 'Angry',
     color: '#FF4500',
     glow: '#8B0000',
-    bgColors: ['#1a0000', '#0f0000', '#080000'],
+    bgColors: ['#300000', '#200000', '#400005'],
     tracks: [
       {
         title: 'Symphony No.5 – Beethoven',
@@ -123,7 +123,7 @@ const MOODS = {
     en: 'Romantic',
     color: '#FF69B4',
     glow: '#C71585',
-    bgColors: ['#1a0010', '#0f0009', '#080005'],
+    bgColors: ['#2d0020', '#1a0015', '#3d0030'],
     tracks: [
       {
         title: "Pachelbel's Canon in D",
@@ -192,23 +192,23 @@ function resizeCanvas() {
 function initOrbs() {
   orbs = [];
   const mood = state.mood ? MOODS[state.mood] : null;
-  const colors = mood ? mood.bgColors : ['#0a0020', '#050010', '#020008'];
-  for (let i = 0; i < 5; i++) {
+  const colors = mood ? mood.bgColors : ['#1a0050', '#0a0030', '#200040'];
+  for (let i = 0; i < 7; i++) {
     orbs.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      r: 200 + Math.random() * 300,
+      r: 250 + Math.random() * 350,
       color: colors[i % colors.length],
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      opacity: 0.3 + Math.random() * 0.4
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+      opacity: 0.55 + Math.random() * 0.35
     });
   }
 }
 
 function drawBg() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#08080f';
+  ctx.fillStyle = '#0a0a0f';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   orbs.forEach(o => {
