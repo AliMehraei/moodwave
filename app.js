@@ -1,6 +1,7 @@
 /* ===== MOODWAVE APP ===== */
 
 // ---- Mood Data ----
+// Songs: all public domain / CC-licensed from Internet Archive & ccMixter
 const MOODS = {
   happy: {
     fa: 'شاد',
@@ -10,18 +11,18 @@ const MOODS = {
     bgColors: ['#2a1a00', '#1a1000', '#0a0800'],
     tracks: [
       {
-        title: 'Happy – Pharrell Williams',
-        desc_fa: 'یه آهنگ که حال هر آدمی رو عوض می‌کنه',
-        desc_en: 'The song that makes everyone smile',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-        duration: '3:53'
+        title: 'Rondo Alla Turca – Mozart',
+        desc_fa: 'موزارت — یه ریتم شاد که همه می‌شناسنش',
+        desc_en: 'Mozart\'s joyful Turkish March — timeless and bright',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Mozart_-_Rondo_Alla_Turca.ogg',
+        duration: '3:31'
       },
       {
-        title: 'Can\'t Stop The Feeling',
-        desc_fa: 'جاستین تیمبرلیک — موزیک‌تون Trolls',
-        desc_en: 'Justin Timberlake — Trolls Soundtrack',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-        duration: '3:56'
+        title: 'Spring – Vivaldi (Four Seasons)',
+        desc_fa: 'ویوالدی — بهار، سرزندگی و شادی خالص',
+        desc_en: 'Vivaldi\'s Spring — pure joy and energy',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Vivaldi_-_Spring_I._Allegro_-_John_Harrison_violin.ogg',
+        duration: '3:45'
       }
     ]
   },
@@ -33,18 +34,18 @@ const MOODS = {
     bgColors: ['#000a1a', '#00060f', '#000408'],
     tracks: [
       {
-        title: 'The Night We Met – Lord Huron',
-        desc_fa: 'وقتی دلت گرفته و می‌خوای تنها باشی',
-        desc_en: 'For when you need to sit with your feelings',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-        duration: '3:28'
+        title: 'Moonlight Sonata – Beethoven',
+        desc_fa: 'بتهوون — سونات مهتاب، غم خالص',
+        desc_en: 'Beethoven\'s Moonlight Sonata — melancholy in its purest form',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Beethoven_Moonlight_Sonata_1st_movement.ogg',
+        duration: '5:06'
       },
       {
-        title: 'Skinny Love – Bon Iver',
-        desc_fa: 'آرامش در غم — یه حس خاص',
-        desc_en: 'Finding peace in melancholy',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-        duration: '3:58'
+        title: 'Clair de Lune – Debussy',
+        desc_fa: 'دبوسی — نور ماه، آرامش در غم',
+        desc_en: 'Debussy\'s moonlit dream — beautiful sadness',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Clair_de_lune.ogg',
+        duration: '4:54'
       }
     ]
   },
@@ -56,18 +57,18 @@ const MOODS = {
     bgColors: ['#1a0020', '#0f0015', '#08000f'],
     tracks: [
       {
-        title: 'Blinding Lights – The Weeknd',
-        desc_fa: 'برای وقتی که می‌خوای همه چیز رو بزنی هوا',
-        desc_en: 'When you\'re ready to conquer everything',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
-        duration: '3:20'
+        title: 'In the Hall of the Mountain King – Grieg',
+        desc_fa: 'گریگ — تو تالار پادشاه کوه، هیجان انگیز و پر انرژی',
+        desc_en: 'Grieg\'s iconic crescendo — pure unstoppable energy',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Grieg_-_In_the_Hall_of_the_Mountain_King.ogg',
+        duration: '2:32'
       },
       {
-        title: 'POWER – Kanye West',
-        desc_fa: 'احساس قدرت مطلق',
-        desc_en: 'Feel unstoppable',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',
-        duration: '4:52'
+        title: 'Ride of the Valkyries – Wagner',
+        desc_fa: 'واگنر — پرواز والکیری‌ها، قدرت مطلق',
+        desc_en: 'Wagner\'s powerful ride — feel like a conqueror',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Ride_of_the_Valkyries.ogg',
+        duration: '5:26'
       }
     ]
   },
@@ -79,18 +80,18 @@ const MOODS = {
     bgColors: ['#001a10', '#000f09', '#000805'],
     tracks: [
       {
-        title: 'Weightless – Marconi Union',
-        desc_fa: 'آرام‌بخش‌ترین آهنگ دنیا',
-        desc_en: 'Scientifically the most relaxing song',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3',
-        duration: '8:10'
+        title: 'Gymnopédie No.1 – Erik Satie',
+        desc_fa: 'اریک ساتی — ژیمنوپدی، آرامش محض',
+        desc_en: 'Satie\'s dreamy piano — the sound of pure calm',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Gymnopedie_No_1.ogg',
+        duration: '3:03'
       },
       {
-        title: 'Experience – Ludovico Einaudi',
-        desc_fa: 'پیانو و آرامش محض',
-        desc_en: 'Piano and pure tranquility',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3',
-        duration: '5:15'
+        title: 'Air on the G String – Bach',
+        desc_fa: 'باخ — آریا، نفس کشیدن عمیق در موزیک',
+        desc_en: 'Bach\'s serene Air — breathe and let go',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Johann_Sebastian_Bach_-_Air_on_the_G_String.ogg',
+        duration: '5:41'
       }
     ]
   },
@@ -102,18 +103,18 @@ const MOODS = {
     bgColors: ['#1a0000', '#0f0000', '#080000'],
     tracks: [
       {
-        title: 'Killing In The Name – RATM',
-        desc_fa: 'وقتی باید همه چیز رو خالی کنی',
-        desc_en: 'For when you need to release it all',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3',
-        duration: '5:13'
+        title: 'Symphony No.5 – Beethoven',
+        desc_fa: 'بتهوون — سمفونی پنجم، همون چهار نت معروف',
+        desc_en: 'Beethoven\'s 5th — raw power and fury unleashed',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/Beethoven_symphony_no5_p1_orch.ogg',
+        duration: '7:42'
       },
       {
-        title: 'Break Stuff – Limp Bizkit',
-        desc_fa: 'یه روز بد؟ این برای توئه',
-        desc_en: 'Having one of those days',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
-        duration: '2:46'
+        title: 'Toccata and Fugue – Bach',
+        desc_fa: 'باخ — توکاتا، وزنه‌ای روی قلب',
+        desc_en: 'Bach\'s dark organ — dramatic and overwhelming',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Bach_toccata_fugue_dm.ogg',
+        duration: '9:31'
       }
     ]
   },
@@ -125,18 +126,18 @@ const MOODS = {
     bgColors: ['#1a0010', '#0f0009', '#080005'],
     tracks: [
       {
-        title: 'Perfect – Ed Sheeran',
-        desc_fa: 'برای لحظه‌های خاص با کسی که دوستش داری',
-        desc_en: 'For special moments with someone you love',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3',
-        duration: '4:23'
+        title: 'Canon in D – Pachelbel',
+        desc_fa: 'پاخلبل — کانون در ر، آهنگ عروسی‌های دنیا',
+        desc_en: 'Pachelbel\'s Canon — the soundtrack of love',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Johann_Pachelbel_-_Canon_in_D_major.ogg',
+        duration: '4:04'
       },
       {
-        title: 'All of Me – John Legend',
-        desc_fa: 'عشق خالص و بی‌قید',
-        desc_en: 'Pure and unconditional love',
-        url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3',
-        duration: '4:29'
+        title: 'Nocturne Op.9 No.2 – Chopin',
+        desc_fa: 'شوپن — نوکتورن، موزیک لحظه‌های خاص',
+        desc_en: 'Chopin\'s Nocturne — tender and deeply romantic',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Frederic_Chopin_-_Nocturne_in_E-flat_major%2C_Op_9_No_2_%28Santiago_de_Murcia%29.ogg',
+        duration: '4:32'
       }
     ]
   }
@@ -427,19 +428,32 @@ function selectMood(mood, cardEl, e) {
 }
 
 // ---- Language ----
+const STRINGS = {
+  fa: {
+    heroSubtitle: 'الان چه حالی داری؟',
+    heroTitle: 'حالت رو<br>انتخاب کن',
+    heroDesc: 'ما یه موزیک کامل برات پیدا می‌کنیم',
+    changeMood: 'تغییر حال',
+  },
+  en: {
+    heroSubtitle: "What's your vibe right now?",
+    heroTitle: 'Pick Your<br>Mood',
+    heroDesc: "We'll find the perfect soundtrack for you",
+    changeMood: 'Change Mood',
+  }
+};
+
 function setLang(lang) {
   state.lang = lang;
   document.documentElement.lang = lang === 'fa' ? 'fa' : 'en';
   document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
   document.body.classList.toggle('lang-en', lang === 'en');
 
-  document.querySelectorAll('[data-fa][data-en]').forEach(el => {
-    if (el.tagName === 'H1') {
-      el.innerHTML = lang === 'fa' ? el.dataset.fa : el.dataset.en;
-    } else {
-      el.textContent = lang === 'fa' ? el.dataset.fa : el.dataset.en;
-    }
-  });
+  const s = STRINGS[lang];
+  $('hero-subtitle').textContent = s.heroSubtitle;
+  $('hero-title').innerHTML = s.heroTitle;
+  $('hero-desc').textContent = s.heroDesc;
+  $('change-mood-btn').textContent = s.changeMood;
 
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);

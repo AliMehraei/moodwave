@@ -279,12 +279,19 @@ body {
 }
 
 /* Language visibility — controlled by JS */
-body.lang-en .mood-fa,
-body.lang-en .mood-fa-desc,
-body.lang-en .hero-subtitle::before,
-body.lang-en [data-fa] { display: none; }
+body.lang-en .mood-fa { display: none; }
+body.lang-en .mood-fa-desc { display: none; }
 
-body.lang-en .mood-en,
+body.lang-en .mood-en {
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  font-family: var(--font-en);
+  letter-spacing: normal;
+  text-transform: none;
+  display: block;
+}
+
 body.lang-en .mood-en-desc { display: block; }
 
 body:not(.lang-en) .mood-en,
