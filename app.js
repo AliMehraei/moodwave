@@ -1,7 +1,7 @@
 /* ===== MOODWAVE APP ===== */
 
 // ---- Mood Data ----
-// Songs: all public domain / CC-licensed from Internet Archive & ccMixter
+// Songs: verified public domain OGG/MP3 from Wikimedia Commons (CORS-open)
 const MOODS = {
   happy: {
     fa: 'شاد',
@@ -11,18 +11,18 @@ const MOODS = {
     bgColors: ['#2a1a00', '#1a1000', '#0a0800'],
     tracks: [
       {
-        title: 'Rondo Alla Turca – Mozart',
-        desc_fa: 'موزارت — یه ریتم شاد که همه می‌شناسنش',
-        desc_en: 'Mozart\'s joyful Turkish March — timeless and bright',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Mozart_-_Rondo_Alla_Turca.ogg',
-        duration: '3:31'
+        title: 'Rondo alla Turca – Mozart',
+        desc_fa: 'موزارت — ریتم شاد که همه می‌شناسنش',
+        desc_en: "Mozart's joyful Turkish March — timeless and bright",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Rondo_Alla_Turka.ogg',
+        duration: '3:14'
       },
       {
         title: 'Spring – Vivaldi (Four Seasons)',
         desc_fa: 'ویوالدی — بهار، سرزندگی و شادی خالص',
-        desc_en: 'Vivaldi\'s Spring — pure joy and energy',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Vivaldi_-_Spring_I._Allegro_-_John_Harrison_violin.ogg',
-        duration: '3:45'
+        desc_en: "Vivaldi's Spring — pure joy and energy",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga',
+        duration: '3:41'
       }
     ]
   },
@@ -36,15 +36,15 @@ const MOODS = {
       {
         title: 'Moonlight Sonata – Beethoven',
         desc_fa: 'بتهوون — سونات مهتاب، غم خالص',
-        desc_en: 'Beethoven\'s Moonlight Sonata — melancholy in its purest form',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Beethoven_Moonlight_Sonata_1st_movement.ogg',
+        desc_en: "Beethoven's Moonlight Sonata — melancholy at its finest",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Beethoven_Moonlight_sonata_sequenced.ogg',
         duration: '5:06'
       },
       {
         title: 'Clair de Lune – Debussy',
         desc_fa: 'دبوسی — نور ماه، آرامش در غم',
-        desc_en: 'Debussy\'s moonlit dream — beautiful sadness',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Clair_de_lune.ogg',
+        desc_en: "Debussy's moonlit dream — beautiful sadness",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Clair_de_lune.ogg',
         duration: '4:54'
       }
     ]
@@ -58,17 +58,17 @@ const MOODS = {
     tracks: [
       {
         title: 'In the Hall of the Mountain King – Grieg',
-        desc_fa: 'گریگ — تو تالار پادشاه کوه، هیجان انگیز و پر انرژی',
-        desc_en: 'Grieg\'s iconic crescendo — pure unstoppable energy',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Grieg_-_In_the_Hall_of_the_Mountain_King.ogg',
-        duration: '2:32'
+        desc_fa: 'گریگ — تو تالار پادشاه کوه، هیجان‌انگیز',
+        desc_en: "Grieg's iconic crescendo — pure unstoppable energy",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/Musopen_-_In_the_Hall_Of_The_Mountain_King.ogg',
+        duration: '2:39'
       },
       {
-        title: 'Ride of the Valkyries – Wagner',
-        desc_fa: 'واگنر — پرواز والکیری‌ها، قدرت مطلق',
-        desc_en: 'Wagner\'s powerful ride — feel like a conqueror',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Ride_of_the_Valkyries.ogg',
-        duration: '5:26'
+        title: 'In the Hall of the Mountain King – Alt',
+        desc_fa: 'گریگ — نسخه دیگه، هیجان بیشتر',
+        desc_en: "Grieg's Hall of the Mountain King — full orchestra",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/In_the_Hall_of_the_Mountain_King.ogg',
+        duration: '2:18'
       }
     ]
   },
@@ -80,18 +80,18 @@ const MOODS = {
     bgColors: ['#001a10', '#000f09', '#000805'],
     tracks: [
       {
-        title: 'Gymnopédie No.1 – Erik Satie',
+        title: 'Gymnopédie No.2 – Erik Satie',
         desc_fa: 'اریک ساتی — ژیمنوپدی، آرامش محض',
-        desc_en: 'Satie\'s dreamy piano — the sound of pure calm',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Gymnopedie_No_1.ogg',
-        duration: '3:03'
+        desc_en: "Satie's dreamy piano — the sound of pure calm",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Gymnopedie_No._2_%28ISRC_USUAN1100786%29.mp3',
+        duration: '3:10'
       },
       {
-        title: 'Air on the G String – Bach',
+        title: 'Air (Bach)',
         desc_fa: 'باخ — آریا، نفس کشیدن عمیق در موزیک',
-        desc_en: 'Bach\'s serene Air — breathe and let go',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Johann_Sebastian_Bach_-_Air_on_the_G_String.ogg',
-        duration: '5:41'
+        desc_en: "Bach's serene Air — breathe and let go",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Air_%28Bach%29.ogg',
+        duration: '5:28'
       }
     ]
   },
@@ -105,15 +105,15 @@ const MOODS = {
       {
         title: 'Symphony No.5 – Beethoven',
         desc_fa: 'بتهوون — سمفونی پنجم، همون چهار نت معروف',
-        desc_en: 'Beethoven\'s 5th — raw power and fury unleashed',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/Beethoven_symphony_no5_p1_orch.ogg',
+        desc_en: "Beethoven's 5th — raw power and fury",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_1._Allegro_con_brio.ogg',
         duration: '7:42'
       },
       {
-        title: 'Toccata and Fugue – Bach',
+        title: 'Toccata et Fugue BWV 565 – Bach',
         desc_fa: 'باخ — توکاتا، وزنه‌ای روی قلب',
-        desc_en: 'Bach\'s dark organ — dramatic and overwhelming',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Bach_toccata_fugue_dm.ogg',
+        desc_en: "Bach's dark organ — dramatic and overwhelming",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Toccata_et_Fugue_BWV565.ogg',
         duration: '9:31'
       }
     ]
@@ -126,18 +126,18 @@ const MOODS = {
     bgColors: ['#1a0010', '#0f0009', '#080005'],
     tracks: [
       {
-        title: 'Canon in D – Pachelbel',
+        title: "Pachelbel's Canon in D",
         desc_fa: 'پاخلبل — کانون در ر، آهنگ عروسی‌های دنیا',
-        desc_en: 'Pachelbel\'s Canon — the soundtrack of love',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Johann_Pachelbel_-_Canon_in_D_major.ogg',
-        duration: '4:04'
+        desc_en: "Pachelbel's Canon — the soundtrack of love",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Pachelbel%27s_Canon.ogg',
+        duration: '3:56'
       },
       {
-        title: 'Nocturne Op.9 No.2 – Chopin',
+        title: 'Nocturne in C♯ minor – Chopin',
         desc_fa: 'شوپن — نوکتورن، موزیک لحظه‌های خاص',
-        desc_en: 'Chopin\'s Nocturne — tender and deeply romantic',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Frederic_Chopin_-_Nocturne_in_E-flat_major%2C_Op_9_No_2_%28Santiago_de_Murcia%29.ogg',
-        duration: '4:32'
+        desc_en: "Chopin's Nocturne — tender and deeply romantic",
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Chopin%2C_Nocturne_in_C-sharp_minor%2C_Op._Posth.ogg',
+        duration: '4:14'
       }
     ]
   }
@@ -154,7 +154,15 @@ let state = {
 };
 
 const audio = new Audio();
+audio.crossOrigin = 'anonymous';
 audio.volume = 0.7;
+audio.addEventListener('error', () => {
+  showToast('⚠️ خطا در بارگذاری موزیک — در حال رفتن به ترک بعدی...');
+  setTimeout(() => nextTrack(), 1500);
+});
+audio.addEventListener('canplay', () => {
+  if (state.playing) audio.play().catch(() => {});
+});
 
 // ---- DOM Refs ----
 const $ = id => document.getElementById(id);
@@ -365,13 +373,17 @@ function playPause() {
     btnPlay.textContent = '▶';
     vinyl.classList.remove('spinning');
   } else {
-    audio.play().catch(() => {
-      // Browser may block autoplay — still animate
-    });
-    startProgress();
     state.playing = true;
     btnPlay.textContent = '⏸';
     vinyl.classList.add('spinning');
+    startProgress();
+    audio.play().catch(() => {
+      state.playing = false;
+      btnPlay.textContent = '▶';
+      vinyl.classList.remove('spinning');
+      clearInterval(state.progressTimer);
+      showToast('▶ برای پخش روی دکمه Play کلیک کن');
+    });
   }
 }
 
